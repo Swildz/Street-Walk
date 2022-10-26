@@ -1,3 +1,4 @@
+import 'package:application_street_walk/data/models/street_model.dart';
 import 'package:application_street_walk/pages/detail_page.dart';
 import 'package:application_street_walk/pages/home_page.dart';
 import 'package:application_street_walk/pages/splash_page.dart';
@@ -26,10 +27,11 @@ class MyApp extends StatelessWidget {
         SplashPage.routeName: (context) => const SplashPage(),
         // ignore: equal_keys_in_map
         HomePage.routeName: (context) => const HomePage(),
-        // ignore: equal_keys_in_map
+        //ignore: equal_keys_in_map
         // DetailPage.routeName: (context) => DetailPage(
-        //       id: ModalRoute.of(context)?.settings.arguments as String,
+        //       articles: ModalRoute.of(context)!.settings.arguments as Articles,
         //     )
+        // ignore: equal_keys_in_map
       },
     );
   }

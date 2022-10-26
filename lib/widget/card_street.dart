@@ -1,5 +1,6 @@
 import 'package:application_street_walk/data/models/street_model.dart';
 import 'package:application_street_walk/pages/detail_page.dart';
+import 'package:application_street_walk/shared/style_color.dart';
 import 'package:flutter/material.dart';
 
 class CardStreet extends StatelessWidget {
@@ -8,25 +9,26 @@ class CardStreet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onTap: () {
-        Navigator.pushNamed(context, DetailPage.routeName,
-            arguments: articles.source.id);
-        debugPrint(articles.source.id);
-      },
-      leading: Hero(
-        tag: articles.source,
-        child: Image.network(
-          articles.urlToImage,
-          fit: BoxFit.cover,
+    return Material(
+      color: primaryColor,
+      child: ListTile(
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        leading: Hero(
+          tag: articles.urlToImage!,
+          child: Image.network(
+            articles.urlToImage!,
+            width: 100,
+          ),
         ),
-      ),
-      title: Text(
-        articles.title,
-        style: const TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.w200,
-          fontSize: 18,
+        title: Text(articles.title),
+        subtitle: Text(articles.author ?? ""),
+        //    onTap: () => Navigation.intentWithData(DetailPage.routeName, articles),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailPage(articles: articles),
+          ),
         ),
       ),
     );

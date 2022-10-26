@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
           width: 100,
           height: 100,
           decoration: BoxDecoration(
-            color: Colors.grey[200],
+            color: Colors.green[200],
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
