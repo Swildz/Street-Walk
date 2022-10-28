@@ -17,19 +17,19 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(30),
+        padding: const EdgeInsets.all(70),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset('ass'),
+              Image.asset('assets/login.png'),
               const SizedBox(
-                height: 25,
+                height: 1,
               ),
               const Padding(
                 padding: EdgeInsets.only(right: 30),
                 child: Text(
                   'Sign in now, and find new journal',
-                  style: TextStyle(fontSize: 15, color: Colors.amber),
+                  style: TextStyle(fontSize: 15, color: Colors.black),
                 ),
               ),
               const SizedBox(
@@ -38,14 +38,15 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(width: 3, color: primaryColor),
+                    borderRadius: BorderRadius.circular(21),
+                    borderSide:
+                        const BorderSide(width: 3, color: Colors.black12),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: primaryColor),
+                    borderSide: BorderSide(width: 3, color: Colors.black12),
                   ),
                   errorBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: primaryColor),
+                    borderSide: BorderSide(width: 3, color: Colors.black12),
                   ),
                   labelText: 'Type your email or user name',
                   labelStyle: const TextStyle(
@@ -62,14 +63,15 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: true,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(width: 3, color: primaryColor),
+                    borderRadius: BorderRadius.circular(21),
+                    borderSide:
+                        const BorderSide(width: 3, color: Colors.black12),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: primaryColor),
+                    borderSide: BorderSide(width: 3, color: Colors.black12),
                   ),
                   errorBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: primaryColor),
+                    borderSide: BorderSide(width: 3, color: Colors.black12),
                   ),
                   labelText: 'Type your password',
                   labelStyle: const TextStyle(
@@ -85,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     child: const Text(
                       'Forgot Password?',
-                      style: TextStyle(color: Colors.amber, fontSize: 12.0),
+                      style: TextStyle(color: Colors.black, fontSize: 12.0),
                     ),
                   )
                 ],
@@ -103,10 +105,10 @@ class _LoginPageState extends State<LoginPage> {
                 child: MaterialButton(
                   onPressed: () =>
                       Navigator.pushNamed(context, HomePage.routeName),
-                  color: Colors.black12,
+                  color: Colors.blue,
                   child: const Text(
-                    'Sign in',
-                    style: TextStyle(fontSize: 17, color: Colors.black),
+                    'LOGIN',
+                    style: TextStyle(fontSize: 17, color: Colors.white),
                   ),
                 ),
               ),
