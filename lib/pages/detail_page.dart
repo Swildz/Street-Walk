@@ -1,5 +1,8 @@
+import 'package:application_street_walk/common/navigation.dart';
 import 'package:application_street_walk/data/models/street_model.dart';
+import 'package:application_street_walk/pages/article_web.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class DetailPage extends StatelessWidget {
   static const routeName = '/';
@@ -61,8 +64,13 @@ class DetailPage extends StatelessWidget {
                 ElevatedButton(
                   child: const Text("Read More"),
                   onPressed: () {
-                    // Navigator.pushNamed(context, )
-                    // argument : ar
+                    // Navigation.IntentWithData(routeName, articles.url);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: ((context) => ArticleWeb(url: articles.url)),
+                      ),
+                    );
                   },
                 )
               ],
