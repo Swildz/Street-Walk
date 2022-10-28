@@ -22,10 +22,11 @@ class _SplashPageState extends State<SplashPage> {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              CircularProgressIndicator(),
-              SizedBox(height: 10),
-              Text('Loading ..')
+            children: [
+              const CircularProgressIndicator(),
+              const SizedBox(height: 10),
+              const Text('Loading ..'),
+              Image.asset('assets/login.png'),
             ],
           ),
         ),

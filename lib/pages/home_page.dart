@@ -34,6 +34,16 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Text('Coming soon'),
       ),
+    ),
+    const Scaffold(
+      body: Center(
+        child: Text('Coming soon'),
+      ),
+    ),
+    const Scaffold(
+      body: Center(
+        child: Text('Coming soon'),
+      ),
     )
   ];
 
@@ -42,6 +52,16 @@ class _HomePageState extends State<HomePage> {
         icon: Icon(
             Platform.isIOS ? CupertinoIcons.house_fill : Icons.home_filled),
         label: 'Home'),
+    BottomNavigationBarItem(
+        icon: Icon(Platform.isIOS
+            ? CupertinoIcons.square_favorites_alt
+            : Icons.favorite),
+        label: 'Favorite'),
+    BottomNavigationBarItem(
+        icon: Icon(Platform.isIOS
+            ? CupertinoIcons.square_favorites_alt
+            : Icons.favorite),
+        label: 'Favorite'),
     BottomNavigationBarItem(
         icon: Icon(Platform.isIOS ? CupertinoIcons.settings : Icons.settings),
         label: 'Setting'),

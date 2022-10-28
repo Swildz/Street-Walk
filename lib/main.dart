@@ -27,6 +27,8 @@ class MyApp extends StatelessWidget {
         // ignore: equal_keys_in_map
         HomePage.routeName: (context) => const HomePage(),
         // ignore: equal_keys_in_map
+        // HomePage.routeName: (context) => const HomePage(),
+        //ignore: equal_keys_in_map
         // DetailPage.routeName: (context) => DetailPage(
         //       id: ModalRoute.of(context)?.settings.arguments as String,
         //     )

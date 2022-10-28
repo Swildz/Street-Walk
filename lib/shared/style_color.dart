@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 const Color primaryColor = Color.fromARGB(255, 255, 255, 255);
 const Color secondaryColor = Color.fromARGB(255, 251, 212, 56);
+const Color inputColor = Color.fromARGB(98, 112, 112, 150);
 
 final TextTheme textTheme = TextTheme(
   headline1: GoogleFonts.poppins(
