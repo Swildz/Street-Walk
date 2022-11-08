@@ -14,7 +14,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,9 +27,9 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashPage.routeName: (context) => const SplashPage(),
         // ignore: equal_keys_in_map
-        LoginPage.routeName: (context) => const LoginPage(),
+        // LoginPage.routeName: (context) => const LoginPage(),
         // ignore: equal_keys_in_map
-        // HomePage.routeName: (context) => const HomePage(),
+        HomePage.routeName: (context) => const HomePage(),
         //ignore: equal_keys_in_map
         // DetailPage.routeName: (context) => DetailPage(
         //       articles: ModalRoute.of(context)!.settings.arguments as Articles,

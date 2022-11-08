@@ -14,14 +14,24 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(70),
+        padding: const EdgeInsets.all(40),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset('assets/login.png'),
+              Image.asset('assets/sry.png'),
               const SizedBox(
                 height: 1,
               ),
@@ -35,18 +45,18 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 15,
               ),
-              TextField(
+              TextFormField(
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(21),
                     borderSide:
-                        const BorderSide(width: 3, color: Colors.black12),
+                        const BorderSide(width: 3.5, color: Colors.black12),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: Colors.black12),
+                    borderSide: BorderSide(width: 2, color: Colors.black12),
                   ),
                   errorBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: Colors.black12),
+                    borderSide: BorderSide(width: 1, color: Colors.black12),
                   ),
                   labelText: 'Type your email or user name',
                   labelStyle: const TextStyle(
@@ -65,13 +75,13 @@ class _LoginPageState extends State<LoginPage> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(21),
                     borderSide:
-                        const BorderSide(width: 3, color: Colors.black12),
+                        const BorderSide(width: 3.5, color: Colors.black12),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: Colors.black12),
+                    borderSide: BorderSide(width: 2, color: Colors.black12),
                   ),
                   errorBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: Colors.black12),
+                    borderSide: BorderSide(width: 1, color: Colors.black12),
                   ),
                   labelText: 'Type your password',
                   labelStyle: const TextStyle(
