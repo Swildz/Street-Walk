@@ -6,7 +6,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class LoginPage extends StatefulWidget {
-  static const routeName = '/splash';
+  static const routeName = '/loginPage';
   const LoginPage({super.key});
   @override
   State<LoginPage> createState() => _LoginPageState();

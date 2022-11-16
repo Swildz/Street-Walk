@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../widget/costom_scaffold.dart';
 
 class ArticleWeb extends StatelessWidget {
-  static const routeName = '/';
+  static const routeName = '/articlePage';
 
   final String url;
 

@@ -1,6 +1,3 @@
-import 'package:application_street_walk/data/models/street_model.dart';
-import 'package:application_street_walk/pages/article_web.dart';
-import 'package:application_street_walk/pages/detail_page.dart';
 import 'package:application_street_walk/pages/home_page.dart';
 import 'package:application_street_walk/pages/login_page.dart';
 import 'package:application_street_walk/pages/splash_page.dart';
@@ -25,9 +22,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: SplashPage.routeName,
       routes: {
-        SplashPage.routeName: (context) => const SplashPage(),
+        // SplashPage.routeName: (context) => const SplashPage(),
         // ignore: equal_keys_in_map
-        LoginPage.routeName: (context) => const LoginPage(),
+        // LoginPage.routeName: (context) => const LoginPage(),
         // ignore: equal_keys_in_map
         HomePage.routeName: (context) => const HomePage(),
         //ignore: equal_keys_in_map

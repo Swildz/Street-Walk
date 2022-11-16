@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class DetailPage extends StatelessWidget {
-  static const routeName = '/';
+  static const routeName = '/detailPage';
 
   final Articles articles;
 

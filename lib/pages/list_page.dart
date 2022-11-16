@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:application_street_walk/utils/result_state.dart';
 
 class ListPage extends StatelessWidget {
-  static const routeName = '/';
+  static const routeName = '/listPage';
   const ListPage({super.key});
 
   Widget _buildList(BuildContext context) {
