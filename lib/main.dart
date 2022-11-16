@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashPage.routeName: (context) => const SplashPage(),
         // ignore: equal_keys_in_map
-        // LoginPage.routeName: (context) => const LoginPage(),
+        LoginPage.routeName: (context) => const LoginPage(),
         // ignore: equal_keys_in_map
         HomePage.routeName: (context) => const HomePage(),
         //ignore: equal_keys_in_map
