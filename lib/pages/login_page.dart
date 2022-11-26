@@ -35,15 +35,15 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 1,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 30),
-                child: Text(
-                  'Sign in now, and find new journal',
-                  style: TextStyle(fontSize: 15, color: Colors.black),
-                ),
-              ),
+              // const Padding(
+              //   padding: EdgeInsets.only(right: 30),
+              //   child: Text(
+              //     'Sign in now, and find new journal',
+              //     style: TextStyle(fontSize: 15, color: Colors.black),
+              //   ),
+              // ),
               const SizedBox(
-                height: 15,
+                height: 1,
               ),
               TextFormField(
                 decoration: InputDecoration(
@@ -58,10 +58,15 @@ class _LoginPageState extends State<LoginPage> {
                   errorBorder: const OutlineInputBorder(
                     borderSide: BorderSide(width: 1, color: Colors.black12),
                   ),
-                  labelText: 'Type your email or user name',
+                  prefixIcon: Icon(
+                    Icons.person,
+                    color: Colors.black,
+                  ),
+                  labelText: 'Username',
+                  hintText: 'Username',
                   labelStyle: const TextStyle(
                     fontFamily: 'poppins',
-                    color: Colors.black,
+                    color: Color(969696),
                   ),
                 ),
               ),
@@ -83,21 +88,38 @@ class _LoginPageState extends State<LoginPage> {
                   errorBorder: const OutlineInputBorder(
                     borderSide: BorderSide(width: 1, color: Colors.black12),
                   ),
-                  labelText: 'Type your password',
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.black,
+                  ),
+                  labelText: 'Password',
+                  hintText: 'Password',
                   labelStyle: const TextStyle(
-                      fontFamily: 'poppins', color: Colors.black),
+                      fontFamily: 'poppins', color: Color(969696)),
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Checkbox(
+                    value: bool.fromEnvironment('login'),
+                    onChanged: (bool? newValue) {
+                      setState(() {});
+                    },
+                  ),
+                  Text('Keep me logged in'),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextButton(
                     onPressed: () {
                       print('Forget Password');
                     },
                     child: const Text(
-                      'Forgot Password?',
-                      style: TextStyle(color: Colors.black, fontSize: 12.0),
+                      'Forgot Your Password?',
+                      style: TextStyle(color: Colors.red, fontSize: 12.0),
                     ),
                   )
                 ],
@@ -115,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: MaterialButton(
                   onPressed: () =>
                       Navigator.pushNamed(context, HomePage.routeName),
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 13, 111, 209),
                   child: const Text(
                     'LOGIN',
                     style: TextStyle(fontSize: 17, color: Colors.white),
@@ -125,23 +147,80 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                width: double.infinity,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                //color: Colors.black12,
-                child: MaterialButton(
-                  onPressed: () =>
-                      Navigator.pushNamed(context, HomePage.routeName),
-                  color: Colors.black12,
-                  child: const Text(
-                    'Create Account',
-                    style: TextStyle(fontSize: 17, color: Colors.black),
+              // Container(
+              //   clipBehavior: Clip.antiAliasWithSaveLayer,
+              //   width: double.infinity,
+              //   height: 40,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(15),
+              //   ),
+              //   //color: Colors.black12,
+              //   child: MaterialButton(
+              //     onPressed: () =>
+              //         Navigator.pushNamed(context, HomePage.routeName),
+              //     color: Colors.black12,
+              //     child: const Text(
+              //       'Create Account',
+              //       style: TextStyle(fontSize: 17, color: Colors.black),
+              //     ),
+              //   ),
+              // ),
+              Row(
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Don't have an account?",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 110, 110, 110)),
+                      ),
+                    ],
                   ),
-                ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "   Sign up here!",
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 92, 135, 221)),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Divider(
+                        thickness: 0.5,
+                        height: 80,
+                        color: Colors.red,
+                        indent: 50,
+                        endIndent: 40,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text('OR CONNECT WITH'),
+                    ],
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Container(
+                      margin: EdgeInsets.fromLTRB(100, 5, 5, 5),
+                      child: Image.asset('assets/google.png')),
+                  Container(
+                      margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                      child: Image.asset('assets/facebook.png'))
+                ],
               )
             ],
           ),

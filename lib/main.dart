@@ -18,11 +18,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: textTheme,
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.blue,
       ),
       initialRoute: SplashPage.routeName,
       routes: {
-        // SplashPage.routeName: (context) => const SplashPage(),
+        SplashPage.routeName: (context) => const SplashPage(),
         // ignore: equal_keys_in_map
         // LoginPage.routeName: (context) => const LoginPage(),
         // ignore: equal_keys_in_map

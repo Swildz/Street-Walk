@@ -15,14 +15,20 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Street Walk'),
+        title: const Text('Home'),
+        bottomOpacity: 1.0,
+        // toolbarOpacity: 0.0,
+        // backgroundColor: Color.fromARGB(0, 1, 1, 1),
       ),
       body: SingleChildScrollView(
           child: Column(
         children: [
           Hero(
             tag: articles.urlToImage!,
-            child: Image.network(articles.urlToImage!),
+            child: Image.network(
+              articles.urlToImage!,
+              width: 400,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(10),
@@ -34,28 +40,31 @@ class DetailPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
                 const Divider(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 235, 235, 235),
+                  thickness: 2,
                 ),
                 Text(
                   articles.title,
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 const Divider(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 235, 235, 235),
+                  thickness: 2,
                 ),
                 Text(
                   'Date : ${articles.publishedAt}',
                   style: Theme.of(context).textTheme.caption,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Text(
                   'Author : ${articles.author}',
                   style: Theme.of(context).textTheme.caption,
                 ),
                 const Divider(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 235, 235, 235),
+                  thickness: 2,
                 ),
                 Text(
                   articles.content ?? "",

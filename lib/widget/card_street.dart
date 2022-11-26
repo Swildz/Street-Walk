@@ -34,3 +34,34 @@ class CardStreet extends StatelessWidget {
     );
   }
 }
+
+class Carousel extends StatelessWidget {
+  final Articles articles;
+  const Carousel({super.key, required this.articles});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width,
+          margin: EdgeInsets.symmetric(horizontal: 5.0),
+          decoration: BoxDecoration(color: Colors.amber),
+          child:
+              // Image.network(articles.urlToImage!),
+              Text(
+            articles.author ?? "",
+            style: TextStyle(fontSize: 16.0),
+          ),
+        ),
+        // Hero(
+        //   tag: articles.urlToImage!,
+        //   child: Image.network(
+        //     articles.urlToImage!,
+        //     width: 10,
+        //   ),
+        // ),
+      ],
+    );
+  }
+}
