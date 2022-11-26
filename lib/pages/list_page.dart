@@ -60,12 +60,6 @@ class ListPage extends StatelessWidget {
 
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Street Walk',
-          textAlign: TextAlign.center,
-        ),
-      ),
       body: _buildList(context),
     );
   }

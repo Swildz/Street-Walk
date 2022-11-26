@@ -1,3 +1,4 @@
+import 'package:application_street_walk/pages/history_page.dart';
 import 'package:application_street_walk/pages/home_page.dart';
 import 'package:application_street_walk/pages/login_page.dart';
 import 'package:application_street_walk/pages/splash_page.dart';
@@ -22,11 +23,13 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: SplashPage.routeName,
       routes: {
+        SplashPage.routeName: (context) => const SplashPage(),
         // SplashPage.routeName: (context) => const SplashPage(),
         // ignore: equal_keys_in_map
         // LoginPage.routeName: (context) => const LoginPage(),
         // ignore: equal_keys_in_map
         HomePage.routeName: (context) => const HomePage(),
+        HistoryPage.routName: (context) => const HistoryPage(),
         //ignore: equal_keys_in_map
         // DetailPage.routeName: (context) => DetailPage(
         //       articles: ModalRoute.of(context)!.settings.arguments as Articles,

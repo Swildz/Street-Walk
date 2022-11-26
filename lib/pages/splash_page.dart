@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashPage extends StatefulWidget {
-  static const routeName = '/splashPage';
+  static const routeName = '/';
   const SplashPage({super.key});
 
   @override
