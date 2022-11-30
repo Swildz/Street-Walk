@@ -1,10 +1,7 @@
-import 'package:application_street_walk/common/navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:webview_flutter/src/webview.dart';
 
 class CustomScaffold extends StatelessWidget {
   final Widget body;

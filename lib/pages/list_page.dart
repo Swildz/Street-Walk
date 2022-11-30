@@ -1,4 +1,5 @@
 import 'package:application_street_walk/data/api/api_service.dart';
+import 'package:application_street_walk/data/models/street_model.dart';
 import 'package:application_street_walk/provider/street_provider.dart';
 import 'package:application_street_walk/widget/card_street.dart';
 import 'package:application_street_walk/widget/platform_widget.dart';
@@ -14,7 +15,9 @@ import 'package:application_street_walk/utils/result_state.dart';
 class ListPage extends StatelessWidget {
   static const routeName = '/listPage';
 
-  const ListPage({super.key});
+  final Articles articles;
+
+  const ListPage({super.key, required this.articles});
   // static TextEditingController controller =
   //     TextEditingController(text: "Search");
 
@@ -68,7 +71,7 @@ class ListPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Row(children: [
           Container(
-            margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+            margin: EdgeInsets.all(5),
             child: Column(
               children: [
                 Image.asset(
@@ -123,152 +126,97 @@ class ListPage extends StatelessWidget {
             ],
           ),
         ]),
-        flexibleSpace: Container(
-          margin: EdgeInsets.fromLTRB(25, 180, 25, 20),
-          child: Row(
-            children: [
-              Expanded(
-                  child: TextFormField(
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(35),
-                            borderSide: const BorderSide(
-                                width: 5,
-                                color: Color.fromARGB(31, 255, 255, 255)),
-                          ),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 5, color: Colors.black12),
-                          ),
-                          errorBorder: const OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 1, color: Colors.black12),
-                          ),
-                          labelText: 'Search',
-                          labelStyle: const TextStyle(
-                            fontFamily: 'poppins',
-                            color: Colors.black,
-                          ),
-                          suffixIcon: Icon(Icons.search))))
-            ],
-          ),
-        ),
+        // flexibleSpace: Container(
+        //   margin: EdgeInsets.fromLTRB(25, 180, 25, 20),
+        //   child: Row(
+        //     children: [
+        //       Expanded(
+        //           child: TextFormField(
+        //               decoration: InputDecoration(
+        //                   filled: true,
+        //                   fillColor: Colors.white,
+        //                   enabledBorder: OutlineInputBorder(
+        //                     borderRadius: BorderRadius.circular(35),
+        //                     borderSide: const BorderSide(
+        //                         width: 5,
+        //                         color: Color.fromARGB(31, 255, 255, 255)),
+        //                   ),
+        //                   focusedBorder: const OutlineInputBorder(
+        //                     borderSide:
+        //                         BorderSide(width: 3, color: Colors.black12),
+        //                   ),
+        //                   errorBorder: const OutlineInputBorder(
+        //                     borderSide:
+        //                         BorderSide(width: 1, color: Colors.black12),
+        //                   ),
+        //                   labelText: 'Search',
+        //                   labelStyle: const TextStyle(
+        //                     fontFamily: 'poppins',
+        //                     color: Colors.black,
+        //                   ),
+        //                   suffixIcon: Icon(Icons.search))))
+        //     ],
+        //   ),
+        // ),
         titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
         backgroundColor: Color.fromARGB(255, 0, 129, 210),
-        toolbarHeight: 200,
+        toolbarHeight: 175,
       ),
       // _buildList(context),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(2.0),
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
               child: CarouselSlider(
-                  items: [
-                    // ChangeNotifierProvider(
-                    //   create: (_) =>
-                    //       ListStreetProvider(apiService: ApiService()),
-                    //   child: Consumer<ListStreetProvider>(
-                    //     builder: (context, state, _) {
-                    //       if (state.state == ResultState.Loading) {
-                    //         return const Center(
-                    //             child: CircularProgressIndicator());
-                    //       } else if (state.state == ResultState.HasData) {
-                    //         return ListView.builder(
-                    //           shrinkWrap: true,
-                    //           itemCount: state.streetModel.articles.length,
-                    //           itemBuilder: (context, index) {
-                    //             var streetModel =
-                    //                 state.streetModel.articles[index];
-                    //             return Carousel(articles: streetModel);
-                    //           },
-                    //         );
-                    //       } else if (state.state == ResultState.NoData) {
-                    //         return Center(child: Text(state.message));
-                    //       } else if (state.state == ResultState.Error) {
-                    //         return Scaffold(
-                    //           body: Container(
-                    //               alignment: Alignment.center,
-                    //               child: Column(
-                    //                 crossAxisAlignment:
-                    //                     CrossAxisAlignment.center,
-                    //                 mainAxisAlignment: MainAxisAlignment.center,
-                    //                 children: [
-                    //                   SizedBox(
-                    //                     height: 350,
-                    //                     width: 350,
-                    //                     child: Lottie.asset(
-                    //                         "assets/networkerror.json"),
-                    //                   )
-                    //                 ],
-                    //               )),
-                    //         );
-                    //       } else {
-                    //         return const Center(
-                    //           child: Text('No Such DAta'),
-                    //         );
-                    //       }
-                    //     },
-                    //   ),
-                    // ),
-                    // Container(
-                    //   child: Column(children: [
-                    //     Hero(
-                    //         tag: key.state,
-                    //         child: Image.network(articles.urlToImage!),
-                    //       ),
-                    //   ],),
-                    // )
-                    1, 2, 3
-                  ].map((i) {
+                  items: [1, 2, 3].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
-                            width: MediaQuery.of(context).size.width,
-                            margin: EdgeInsets.symmetric(horizontal: 5.0),
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 0, 70, 113)),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'Berita $i',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    height: 2,
-                                  ),
-                                  textAlign: TextAlign.center,
+                          width: MediaQuery.of(context).size.width,
+                          margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                          decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 0, 70, 113)),
+                          child: Column(
+                            children: [
+                              Text(
+                                'WSL $i',
+                                style: const TextStyle(
+                                  fontSize: 15.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  height: 2,
                                 ),
-                                Image.asset(
-                                  "assets/example.jpg",
-                                  width: 220,
-                                )
-                              ],
-                            ));
+                                textAlign: TextAlign.center,
+                              ),
+                              Image.network(
+                                "https://images.wsj.net/im-675671/social",
+                                width: 140,
+                              )
+                            ],
+                          ),
+                        );
                       },
                     );
                   }).toList(),
                   options: CarouselOptions(
-                    height: 200,
-                    aspectRatio: 16 / 9,
-                    viewportFraction: 0.8,
+                    height: 150,
+                    aspectRatio: 4 / 3,
+                    viewportFraction: 0.6,
                     initialPage: 0,
                     enableInfiniteScroll: true,
                     reverse: false,
                     autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 3),
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
+                    autoPlayInterval: const Duration(seconds: 3),
+                    autoPlayAnimationDuration:
+                        const Duration(milliseconds: 800),
                     autoPlayCurve: Curves.fastOutSlowIn,
                     enlargeCenterPage: true,
                     scrollDirection: Axis.horizontal,
                   )),
             ),
             Container(
-                height: 200,
-                margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                height: 327,
+                margin: const EdgeInsets.all(3),
                 child: _buildList(context))
           ],
         ),

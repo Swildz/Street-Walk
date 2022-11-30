@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:application_street_walk/data/api/api_service.dart';
+import 'package:application_street_walk/data/models/street_model.dart';
 import 'package:application_street_walk/pages/list_page.dart';
 import 'package:application_street_walk/pages/login_page.dart';
 import 'package:application_street_walk/provider/street_provider.dart';
@@ -44,10 +45,22 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  late final Articles articles;
   final List<Widget> _listWidget = [
     ChangeNotifierProvider(
       create: (_) => ListStreetProvider(apiService: ApiService()),
-      child: const ListPage(),
+      child: ListPage(
+        articles: Articles(
+          source: Source(),
+          author: '',
+          content: '',
+          description: '',
+          publishedAt: null,
+          title: '',
+          url: '',
+          urlToImage: '',
+        ),
+      ),
     ),
     const Scaffold(
       body: Center(
