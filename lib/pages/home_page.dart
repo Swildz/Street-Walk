@@ -1,10 +1,8 @@
-import 'dart:async';
 import 'dart:io';
 
 import 'package:application_street_walk/data/api/api_service.dart';
 import 'package:application_street_walk/data/models/street_model.dart';
 import 'package:application_street_walk/pages/list_page.dart';
-import 'package:application_street_walk/pages/login_page.dart';
 import 'package:application_street_walk/provider/street_provider.dart';
 import 'package:application_street_walk/widget/platform_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,13 +21,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // Timer(const Duration(seconds: 5), () {
-    //   Navigator.pushReplacement(
-    //       context,
-    //       MaterialPageRoute(
-    //         builder: ((context) => const LoginPage()),
-    //       ));
-    // });
   }
 
   @override
@@ -68,9 +59,7 @@ class _HomePageState extends State<HomePage> {
       ),
     ),
     const Scaffold(
-      body: Center(
-        child: Text('Coming soon'),
-      ),
+      body: Scaffold(),
     ),
     const Scaffold(
       body: Center(

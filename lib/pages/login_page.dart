@@ -21,6 +21,8 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
+  final TextEditingController _user = new TextEditingController();
+  final TextEditingController _password = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

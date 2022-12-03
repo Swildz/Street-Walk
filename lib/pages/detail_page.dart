@@ -17,8 +17,6 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home'),
         bottomOpacity: 1.0,
-        // toolbarOpacity: 0.0,
-        // backgroundColor: Color.fromARGB(0, 1, 1, 1),
       ),
       body: SingleChildScrollView(
           child: Column(
@@ -29,6 +27,13 @@ class DetailPage extends StatelessWidget {
               articles.urlToImage!,
               width: 400,
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ElevatedButton(
+                  onPressed: (() {}), child: const Icon(Icons.favorite)),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.all(10),
@@ -81,7 +86,7 @@ class DetailPage extends StatelessWidget {
                       ),
                     );
                   },
-                )
+                ),
               ],
             ),
           ),

@@ -71,7 +71,7 @@ class ListPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Row(children: [
           Container(
-            margin: EdgeInsets.all(5),
+            margin: const EdgeInsets.all(5),
             child: Column(
               children: [
                 Image.asset(
@@ -87,15 +87,15 @@ class ListPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Row(
-                children: [
-                  const Text(
-                    'Hai, User!',
+                children: const [
+                  Text(
+                    'Hai, Siddiq!',
                     textAlign: TextAlign.left,
                   ),
                 ],
               ),
               Row(
-                children: [
+                children: const [
                   Text(
                     "Sudah Baca Berta Hari ini?",
                     textAlign: TextAlign.left,
@@ -107,7 +107,7 @@ class ListPage extends StatelessWidget {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(50, 5, 5, 5),
+                margin: const EdgeInsets.fromLTRB(50, 5, 5, 5),
                 child: Material(
                   child: InkWell(
                     onTap: () {
@@ -117,7 +117,8 @@ class ListPage extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Icon(
                         Icons.menu,
-                        color: Color.fromARGB(255, 0, 129, 210),
+                        // color: Color.fromARGB(255, 0, 129, 210),
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -126,38 +127,38 @@ class ListPage extends StatelessWidget {
             ],
           ),
         ]),
-        // flexibleSpace: Container(
-        //   margin: EdgeInsets.fromLTRB(25, 180, 25, 20),
-        //   child: Row(
-        //     children: [
-        //       Expanded(
-        //           child: TextFormField(
-        //               decoration: InputDecoration(
-        //                   filled: true,
-        //                   fillColor: Colors.white,
-        //                   enabledBorder: OutlineInputBorder(
-        //                     borderRadius: BorderRadius.circular(35),
-        //                     borderSide: const BorderSide(
-        //                         width: 5,
-        //                         color: Color.fromARGB(31, 255, 255, 255)),
-        //                   ),
-        //                   focusedBorder: const OutlineInputBorder(
-        //                     borderSide:
-        //                         BorderSide(width: 3, color: Colors.black12),
-        //                   ),
-        //                   errorBorder: const OutlineInputBorder(
-        //                     borderSide:
-        //                         BorderSide(width: 1, color: Colors.black12),
-        //                   ),
-        //                   labelText: 'Search',
-        //                   labelStyle: const TextStyle(
-        //                     fontFamily: 'poppins',
-        //                     color: Colors.black,
-        //                   ),
-        //                   suffixIcon: Icon(Icons.search))))
-        //     ],
-        //   ),
-        // ),
+        flexibleSpace: Container(
+          margin: const EdgeInsets.fromLTRB(30, 190, 30, 10),
+          child: Row(
+            children: [
+              Expanded(
+                  child: TextFormField(
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(
+                                width: 5,
+                                color: Color.fromARGB(31, 255, 255, 255)),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 3, color: Colors.black12),
+                          ),
+                          errorBorder: const OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 1, color: Colors.black12),
+                          ),
+                          labelText: 'Search',
+                          labelStyle: const TextStyle(
+                            fontFamily: 'poppins',
+                            color: Colors.black,
+                          ),
+                          suffixIcon: Icon(Icons.search))))
+            ],
+          ),
+        ),
         titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
         backgroundColor: Color.fromARGB(255, 0, 129, 210),
         toolbarHeight: 175,
@@ -168,13 +169,14 @@ class ListPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              padding: const EdgeInsets.only(bottom: 2),
               child: CarouselSlider(
                   items: [1, 2, 3].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
                           width: MediaQuery.of(context).size.width,
-                          margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                          margin: const EdgeInsets.only(top: 20),
                           decoration: const BoxDecoration(
                               color: Color.fromARGB(255, 0, 70, 113)),
                           child: Column(
@@ -190,7 +192,7 @@ class ListPage extends StatelessWidget {
                               ),
                               Image.network(
                                 "https://images.wsj.net/im-675671/social",
-                                width: 140,
+                                width: 120,
                               )
                             ],
                           ),
@@ -199,7 +201,7 @@ class ListPage extends StatelessWidget {
                     );
                   }).toList(),
                   options: CarouselOptions(
-                    height: 150,
+                    height: 140,
                     aspectRatio: 4 / 3,
                     viewportFraction: 0.6,
                     initialPage: 0,
@@ -215,7 +217,7 @@ class ListPage extends StatelessWidget {
                   )),
             ),
             Container(
-                height: 327,
+                height: 300,
                 margin: const EdgeInsets.all(3),
                 child: _buildList(context))
           ],
