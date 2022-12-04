@@ -1,43 +1,49 @@
 import 'dart:convert';
 
+// StreetModel streetModelFromJson(String str) =>
+//     StreetModel.fromJson(json.decode(str));
+
+// String listStreetModeToJson(StreetModel data) => json.encode(data.toJson());
+
 class StreetModel {
-  String? status;
-  int? totalResults;
-  List<Articles>? articles;
+  final String status;
+  final int totalResults;
+  final List<Articles> articles;
 
-  StreetModel({this.status, this.totalResults, this.articles});
+  StreetModel(
+      {required this.status,
+      required this.totalResults,
+      required this.articles});
 
-  StreetModel.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
-    totalResults = json['totalResults'];
-    if (json['articles'] != null) {
-      articles = <Articles>[];
-      json['articles'].forEach((v) {
-        articles!.add(Articles.fromJson(v));
-      });
-    }
-  }
+  factory StreetModel.fromJson(Map<String, dynamic> json) => StreetModel(
+        status: json["status"],
+        totalResults: json["totalResults"],
+        articles: List<Articles>.from((json["articles"] as List)
+            .map((x) => Articles.fromJson(x))
+            .where((article) =>
+                article.author != null &&
+                article.description != null &&
+                article.urlToImage != null &&
+                article.publishedAt != null &&
+                article.content != null)),
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['status'] = status;
-    data['totalResults'] = totalResults;
-    if (articles != null) {
-      data['articles'] = articles!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        "status": status,
+        "totalResults": totalResults,
+        "articles": List<dynamic>.from(articles.map((e) => e.toJson())),
+      };
 }
 
 class Articles {
-  Source source;
-  String author;
+  Source? source;
+  String? author;
   String title;
-  String description;
+  String? description;
   String url;
-  String urlToImage;
-  String publishedAt;
-  String content;
+  String? urlToImage;
+  DateTime? publishedAt;
+  String? content;
 
   Articles(
       {required this.source,
@@ -51,31 +57,26 @@ class Articles {
 
   factory Articles.fromJson(Map<String, dynamic> json) => Articles(
         // source: json['source'] != null ? Source.fromJson(json['source']) : null,
-        source: Source.fromJson(json['source']),
-        author: json['author'],
-        title: json['title'],
-        description: json['description'],
-        url: json['url'],
-        urlToImage: json['urlToImage'],
-        publishedAt: json['publishedAt'],
-        content: json['content'],
+        source: Source.fromJson(json["source"] ?? "-"),
+        author: json["author"] ?? "-",
+        title: json["title"] ?? "-",
+        description: json["description"] ?? "-",
+        url: json["url"] ?? "-",
+        urlToImage: json["urlToImage"] ?? "-",
+        publishedAt: DateTime.parse(json["publishedAt"] ?? "-"),
+        content: json["content"] ?? "-",
       );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    // ignore: unnecessary_null_comparison
-    if (source != null) {
-      data['source'] = source!.toJson();
-    }
-    data['author'] = author;
-    data['title'] = title;
-    data['description'] = description;
-    data['url'] = url;
-    data['urlToImage'] = urlToImage;
-    data['publishedAt'] = publishedAt;
-    data['content'] = content;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        "source": source,
+        "author": author,
+        "title": title,
+        "description": description,
+        "url": url,
+        "urlToImage": urlToImage,
+        "publishedAt": publishedAt?.toIso8601String(),
+        "content": content,
+      };
 }
 
 class Source {
@@ -85,14 +86,12 @@ class Source {
   Source({this.id, this.name});
 
   Source.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
+    id = json["id"] ?? "-";
+    name = json["name"] ?? "-";
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "name": name,
+      };
 }
